@@ -22,8 +22,12 @@
     background-color: purple; 
 }
 
-.slider {
-    width: 1000px; 
+/* .container {
+    height: 100vh; 
+} */
+/* .slider {
+    width: auto; 
+    height: 10000px !important;
     margin: 0 auto;
     opacity
   }
@@ -32,7 +36,7 @@
     bottom: 60px;
     z-index: 100;
    
-  }
+  } */
 
 
 
