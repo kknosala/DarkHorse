@@ -1,0 +1,38 @@
+.nav-wrapper { 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    background-color: black; 
+}
+
+#roulette {
+    padding: 50px; 
+}
+
+#search {
+    padding: 50px; 
+    
+}
+
+#youtube {
+    padding: 50px; 
+    background-color: green; 
+}
+
+#localapi {
+    padding: 50px; 
+    background-color: purple; 
+}
+
+.slider {
+    width: 1000px; 
+    margin: 0 auto;
+    opacity
+  }
+
+  .slider .indicators {
+    bottom: 60px;
+    z-index: 100;
+   
+  }
+
+
+
