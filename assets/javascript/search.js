@@ -16,7 +16,6 @@ $(document).ready(function(){
             url: queryURL,
             method: "GET"
         }).then(function(response){
-            console.log(response)
             // creates new div with a class and puts the poster from the call in.
             var posterDiv = $('<div>').addClass('movie-poster');
             var posterImg = $('<img>').attr('src', response.Poster);
@@ -35,7 +34,31 @@ $(document).ready(function(){
             // adds all the above into the movie-display div on search.html
             $('#movie-display').append(posterDiv, movieInfo, plot);
         })
-    })
+
+        const term = title;
+        const country = `us`;
+        $.ajax({
+            url: `https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${term}&country=${country}`,
+            type: "GET",
+            headers: {
+                "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
+                "x-rapidapi-key": "a938304903msh75973e6bdae1c2fp1808eejsnb0c393a11c6b"
+            }
+        }).then(function (response) {
+            console.log(response);
+            var locationsArray = response.results[0].locations
+            var whereDiv = $('<div>').addClass('where-to-watch')
+
+            for(i = 0; i < locationsArray.length; i++){
+                console.log(locationsArray[i]);
+                var link = $('<a>').attr({href:locationsArray[i].url, target:'blank'});
+                var watchImage = $('<img>').attr({src:locationsArray[i].icon, alt:locationsArray[i].display_name}).addClass('stream-link')
+                link.append(watchImage);
+                whereDiv.append(link);
+            }
+            $('#link-display').append(whereDiv);
+        });
+        })
 
 
 
