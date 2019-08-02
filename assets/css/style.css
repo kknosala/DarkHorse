@@ -1,47 +1,44 @@
 body {
   background-image: url("../images/DarkHorse.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 130%;
 }
+
+
 .display {
+  color: white;
   display: grid;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   grid-template-columns: 1fr 2fr;
-  /* background-color: #2196f3; */
   padding: 10px;
 }
 
 .display_show_name {
-  background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
 }
 .display_show_poster {
-  background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
 }
 .display_show_actors {
-  background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
 }
 .display_show_plot {
-  background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
 }
 .display_show_streams {
-  background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
