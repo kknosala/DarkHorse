@@ -1,9 +1,11 @@
 body {
+  height: 100vh;
   background-image: url("../images/DarkHorse.jpg");
   background-repeat: no-repeat;
   background-size: 100% 130%;
+  color: white;
 }
-
+/* 
 
 .display {
   color: white;
@@ -39,8 +41,61 @@ body {
   text-align: center;
 }
 .display_show_streams {
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  border: 1px solid;
   padding: 20px;
   font-size: 30px;
   text-align: center;
+} */
+
+.main {
+  display: grid;
+  grid-template-rows: 10% 10% 10%;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-areas:
+    ". nav ."
+    ". buttons ."
+    ". display .";
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.button_row {
+  grid-area: buttons;
+}
+
+.display {
+  grid-area: display;
+  display: grid;
+  grid-template-rows: 15% 35% 50%;
+  grid-template-columns: 35% 65%;
+  grid-template-areas:
+    "name actors"
+    "poster plot"
+    ". streams";
+
+  /* "display_show_name display_show_poster ."
+  "display_show_actors display_show_plot display_show_streams"; */
+}
+
+.display_show_name {
+  grid-area: name;
+  font-size: 50px;
+  color: white;
+}
+.display_show_actors {
+  grid-area: actors;
+  font-size: 50px;
+  color: white;
+}
+.display_show_poster {
+  grid-area: poster;
+}
+.display_show_plot {
+  grid-area: plot;
+}
+
+.display_show_streams {
+  grid-area: streams;
 }
