@@ -5,12 +5,11 @@
 
 #roulette {
     padding: 50px; 
-    background-color: red; 
 }
 
 #search {
     padding: 50px; 
-    background-color: blue; 
+    
 }
 
 #youtube {
@@ -22,3 +21,18 @@
     padding: 50px; 
     background-color: purple; 
 }
+
+.slider {
+    width: 1000px; 
+    margin: 0 auto;
+    opacity
+  }
+
+  .slider .indicators {
+    bottom: 60px;
+    z-index: 100;
+   
+  }
+
+
+
