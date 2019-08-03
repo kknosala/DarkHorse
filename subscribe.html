@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  
  
-  <title>Dark Horse | Subscribe </title>
+  <title>Dark Horse </title>
 </head>
 
 <body>
@@ -29,15 +29,54 @@
     <!-- Navbar -->
     <nav>
             <div class="nav-wrapper">
-              <a href="#" class="brand-logo">DarkHorse</a>
+              <a href="#" class="brand-logo">DarkHorse | Subscribe</a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                   <ul class="right hide-on-med-and-down">
+                      <a href="index.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">local_movies</i>Home</a>
                       <a href="subscribe.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">account_circle</i>Subscribe</a>
                       <a href="search.html"a class="waves-effect waves-light btn btn black"><i class="material-icons left">filter_hdr</i>Search</a>
                       
                
             </div>
           </nav>
+
+
+          <!--Subscribe Card  -->
+          <div class="row">
+              <div class="col s12 m6">
+                <div class="card grey lighten-5">
+                  <div class="card-content black-text">
+                    <span class="card-title">Subscribe Below!</span>
+                    <p>Get in on what everybody's talking about! Subscribe and receive weekly emails from our team!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+                      
+            <!--Input Form  -->
+              <form role="form">
+                  <div class="form-group row">
+                      <label for="first-name"> First Name:</label>
+                      <input class="form-control" id="first-name" type="text">
+                    </div>
+                    <div class="form-group row">
+                        <label for="last-name"> Last Name:</label>
+                        <input class="form-control" id="last-name" type="text">
+                      </div>
+
+                      <div class="form-group row">
+                          <label for="email-address"> Email:</label>
+                          <input class="form-control" id="email-address" type="text">
+                        </div>
+                </div>
+                <button class="btn waves-effect waves-light btn black" type="submit" id="add-user">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+              </form>
+            </div>
+                  
+          
+          
 
 
 
@@ -49,7 +88,7 @@
 <!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>        
 
-<script src="assets/javascript/app.js" type="text/javascript"></script> 
+<script src="assets/javascript/subscribe.js" type="text/javascript"></script> 
 
 </body>
 </html>
