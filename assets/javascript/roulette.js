@@ -40,9 +40,50 @@ const database = firebase.database();
 //     8: "Burn After Reading"
 // })
 
+
+// database.ref("/movies/genres/action").set({
+//     0: "Ninja Assassin",
+//     1: "13 Assassins",
+//     2: "Love, Death and Robots",
+//     3: "Headhunters",
+//     4: "Outlander",
+//     5: "Killing Gunther",
+//     6: "Hardcore Henry",
+//     7: "The Osiris Child",
+// })
 // horror roulette
 function roulette_horror() {
     database.ref("/movies/genres/horror").on("value", function (snapshot) {
+        //creates the random number to grab from the DB
+        let movie_list_length = snapshot.val().length
+        const roulette_choice = Math.floor(Math.random() * (movie_list_length))
+
+        //runs ajax call to look up the movie
+        console.log("seraching: " + snapshot.val()[roulette_choice])
+
+        //runs utelly search for locations and name
+        utelly(snapshot.val()[roulette_choice])
+        omdb(snapshot.val()[roulette_choice])
+    })
+}
+
+function roulette_comedy() {
+    database.ref("/movies/genres/comedy").on("value", function (snapshot) {
+        //creates the random number to grab from the DB
+        let movie_list_length = snapshot.val().length
+        const roulette_choice = Math.floor(Math.random() * (movie_list_length))
+
+        //runs ajax call to look up the movie
+        console.log("seraching: " + snapshot.val()[roulette_choice])
+
+        //runs utelly search for locations and name
+        utelly(snapshot.val()[roulette_choice])
+        omdb(snapshot.val()[roulette_choice])
+    })
+}
+
+function roulette_action() {
+    database.ref("/movies/genres/action").on("value", function (snapshot) {
         //creates the random number to grab from the DB
         let movie_list_length = snapshot.val().length
         const roulette_choice = Math.floor(Math.random() * (movie_list_length))
@@ -104,13 +145,4 @@ function omdb(x) {
     });
 }
 
-
-function print() {
-    console.log(`year: ${roulette_year}`)
-    console.log(`rated: ${roulette_rated}`)
-    console.log(`poster img: ${roulette_poster}`)
-    console.log(`plot: ${roulette_plot}`)
-    console.log(`location obj: ${response_locations}`)
-    console.log(`actors: ${roulette_actors}`)
-}
 roulette_horror();
