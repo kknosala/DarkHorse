@@ -28,9 +28,62 @@ const database = firebase.database();
 //     9: "The Devil's Rejects"
 // })
 
+// database.ref("/movies/genres/comedy").set({
+//     0: "Tucker and Dale vs Evil",
+//     1: "God Bless America",
+//     2: "What We Do in the Shadows",
+//     3: "The Voices",
+//     4: "Cooties",
+//     5: "John Dies at the End",
+//     6: "The House Bunny",
+//     7: "Sex Drive",
+//     8: "Burn After Reading"
+// })
+
+
+// database.ref("/movies/genres/action").set({
+//     0: "Ninja Assassin",
+//     1: "13 Assassins",
+//     2: "Love, Death and Robots",
+//     3: "Headhunters",
+//     4: "Outlander",
+//     5: "Killing Gunther",
+//     6: "Hardcore Henry",
+//     7: "The Osiris Child",
+// })
 // horror roulette
 function roulette_horror() {
     database.ref("/movies/genres/horror").on("value", function (snapshot) {
+        //creates the random number to grab from the DB
+        let movie_list_length = snapshot.val().length
+        const roulette_choice = Math.floor(Math.random() * (movie_list_length))
+
+        //runs ajax call to look up the movie
+        console.log("seraching: " + snapshot.val()[roulette_choice])
+
+        //runs utelly search for locations and name
+        utelly(snapshot.val()[roulette_choice])
+        omdb(snapshot.val()[roulette_choice])
+    })
+}
+
+function roulette_comedy() {
+    database.ref("/movies/genres/comedy").on("value", function (snapshot) {
+        //creates the random number to grab from the DB
+        let movie_list_length = snapshot.val().length
+        const roulette_choice = Math.floor(Math.random() * (movie_list_length))
+
+        //runs ajax call to look up the movie
+        console.log("seraching: " + snapshot.val()[roulette_choice])
+
+        //runs utelly search for locations and name
+        utelly(snapshot.val()[roulette_choice])
+        omdb(snapshot.val()[roulette_choice])
+    })
+}
+
+function roulette_action() {
+    database.ref("/movies/genres/action").on("value", function (snapshot) {
         //creates the random number to grab from the DB
         let movie_list_length = snapshot.val().length
         const roulette_choice = Math.floor(Math.random() * (movie_list_length))
@@ -58,17 +111,18 @@ function utelly(x) {
         let response_object = response.results[0]
         roulette_name = response_object.name
         $(".display_show_name").append("<span>").text(roulette_name)
-
         for (i = 0; i < response_object.locations.length; i++) {
             //* locations buttons for where to watch
             let response_locations_display_name = response_object.locations[i].display_name
             let response_locations_url = response_object.locations[i].url
             let response_locations_icon = response_object.locations[i].icon
 
-            let new_location_link = $("<a>").attr("href", response_locations_url).attr("target", "_blank")
-            let new_location_img = $("<img>").attr("src", response_locations_icon).addClass("steam-link").attr("alt", response_locations_display_name)
-            new_location_link.append(new_location_img);
-            $(".display_show_streams").append(new_location_link)
+            if (!response_locations_display_name.includes("Horror Channel")) {
+                let new_location_link = $("<a>").attr("href", response_locations_url).attr("target", "_blank")
+                let new_location_img = $("<img>").attr("src", response_locations_icon).addClass("steam-link").attr("alt", response_locations_display_name)
+                new_location_link.append(new_location_img);
+                $(".display_show_streams").append(new_location_link)
+            }
         }
     });
 }
@@ -91,13 +145,4 @@ function omdb(x) {
     });
 }
 
-
-function print() {
-    console.log(`year: ${roulette_year}`)
-    console.log(`rated: ${roulette_rated}`)
-    console.log(`poster img: ${roulette_poster}`)
-    console.log(`plot: ${roulette_plot}`)
-    console.log(`location obj: ${response_locations}`)
-    console.log(`actors: ${roulette_actors}`)
-}
 roulette_horror();
