@@ -13,47 +13,75 @@
     <!-- Firebase Database SDK-->
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <!-- Style Sheets -->
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/roulette.css" />
+
     <title>Dark Horse | Search</title>
 </head>
 
-<body>
+  <body>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">DarkHorse</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <ul class="right hide-on-med-and-down">
+                  <a class="waves-effect waves-light btn"><i class="material-icons left">account_circle</i>Subscribe</a>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/roulette.html">Roulette</a></li>
+            <!-- Dropdown initialize -->
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Platform Dropdown<i class="material-icons center">arrow_drop_down</i></a></li>
+          </ul>
+        </div>
+      </nav>
+
     <div class="main">
-        <div class="dh_logo">logo</div>
+      <div class="button_row">
+        <div class="button_genre">
+          <select>
+            <option value="horror">Horror</option>
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+          </select>
+        </div>
+        </div>
+        <br />
+        <div class="button_roulette">
+          <button type="button">Roulette!</button>
+        </div>
+        <hr />
+      </div>
+      <div class="display">
+        <div class="display_show_name">Movie Title</div>
+        <div class="display_show_poster">
+          <img src="assets/images/blue-horse.jpg" alt="stockphoto" />
+        </div>
         <div class="button_row">
             <div class="button_genre">
                 <select>
-                    <option value="horror">horror</option>
-                    <option value="action">action</option>
-                    <option value="comedy">comedy</option>
+                    <option value="horror">Horror</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedy</option>
                 </select>
             </div>
             <div class="button_roulette">
-                <button type="button">randomize</button>
+                <button type="button">Roulette!</button>
             </div>
+            <hr />
         </div>
         <div class="display">
-            <div class="display_show_name">example title</div>
-            <div class="display_show_poster"><img src="http://lorempixel.com/225/350/" alt="stockphoto"></div>
+            <div class="display_show_name"></div>
+            <div class="display_show_poster"></div>
             <div class="display_show_streams">
-                <ul>
-                    <li><a href="netflix.com">netflix</a></li>
-                    <li><span>|</span></li>
-                    <li><a href="amazon.com">prime</a></li>
-                    <li><span>|</span></li>
-                    <li><a href="hulu.com">hulu</a></li>
-                </ul>
             </div>
             <div class="display_show_plot">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio aliquid ipsam neque mollitia numquam quos
-                modi omnis, consequuntur ipsum qui vero excepturi laborum reiciendis esse adipisci? Veniam, perferendis
-                enim quam, ullam, suscipit rem ut odit repellendus reprehenderit quis quasi consectetur.
             </div>
             <div class="display_show_actors">
-                actors
             </div>
         </div>
+        <script src="assets/javascript/roulette.js"></script>
     </div>
 </body>
 

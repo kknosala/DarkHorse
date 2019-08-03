@@ -1,0 +1,54 @@
+body {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+/* 
+.main {
+  display: grid;
+  grid-template-rows: 5% 10% 80%;
+  grid-template-columns: 10% 90%;
+  grid-template-areas:
+    ". ."
+    ". buttons"
+    ". display";
+}
+
+.button_row {
+  grid-area: buttons;
+} */
+
+.display {
+  grid-area: display;
+  display: grid;
+  grid-template-rows: 10% 10% 30% 25%;
+  grid-template-columns: 5% 30% 60% 5%;
+  grid-template-areas:
+    ". name . ."
+    ". poster actors ."
+    ". . plot ."
+    ". . streams .";
+}
+
+.display_show_name {
+  grid-area: name;
+  font-size: 50px;
+  padding-bottom: 50px;
+}
+.display_show_actors {
+  grid-area: actors;
+}
+.display_show_poster {
+  grid-area: poster;
+}
+.display_show_plot {
+  grid-area: plot;
+}
+
+.display_show_streams {
+  grid-area: streams;
+}
