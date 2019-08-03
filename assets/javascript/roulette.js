@@ -145,4 +145,19 @@ function omdb(x) {
     });
 }
 
+
+function print() {
+    console.log(`year: ${roulette_year}`)
+    console.log(`rated: ${roulette_rated}`)
+    console.log(`poster img: ${roulette_poster}`)
+    console.log(`plot: ${roulette_plot}`)
+    console.log(`location obj: ${response_locations}`)
+    console.log(`actors: ${roulette_actors}`)
+}
 roulette_horror();
+
+// selection function
+$(document).ready(function(){
+    $('select').formSelect();
+  });
+        
