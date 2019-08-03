@@ -40,6 +40,7 @@ $(document).ready(function(){
                     }).then(function(individualResponse){
                         var movieContainer = $('<div>').addClass('movie-container');
                         var movieDisplay = $('<div>').addClass('movie-display');
+                        var whereDiv = $('<div>').addClass('where-to-watch')
                         // creates new div with a class and puts the poster from the call in.
                         var posterDiv = $('<div>').addClass('movie-poster');
                         var posterImg = $('<img>').attr('src', individualResponse.Poster);
@@ -53,14 +54,13 @@ $(document).ready(function(){
                         infoText.append('<p>Relased: ' + individualResponse.Released);
                         movieInfo.append(infoText);
                         // creates new div and adds plot
-                        var plot = $('<div>').text(individualResponse.Plot);
+                        var plot = $('<div>').text(individualResponse.Plot).addClass('plot-info');
                         
                         // adds all the above into the movie-display div on search.html
                         movieDisplay.append(posterDiv, movieInfo, plot);
                         // $(`#${movieId}`).append(movieDisplay)
-                        movieContainer.append(movieDisplay);
 
-                        const term = titleArray[i];
+                        const term = individualResponse.Title;
                     
                         const country = `us`;
                         $.ajax({
@@ -71,9 +71,8 @@ $(document).ready(function(){
                                 "x-rapidapi-key": "a938304903msh75973e6bdae1c2fp1808eejsnb0c393a11c6b"
                             }
                         }).then(function (linkResponse) {
-                         
+                            console.log(linkResponse);
                             var locationsArray = linkResponse.results[0].locations
-                            var whereDiv = $('<div>').addClass('where-to-watch')
 
                             for(i = 0; i < locationsArray.length; i++){
                            
@@ -81,17 +80,12 @@ $(document).ready(function(){
                                 var watchImage = $('<img>').attr({src:locationsArray[i].icon, alt:locationsArray[i].display_name}).addClass('stream-link')
                                 link.append(watchImage);
                                 whereDiv.append(link);
-                                // $(`#${movieId}`).append(whereDiv)
                             }
-                            movieContainer.append(whereDiv);
-                            // $('.link-display').append(whereDiv);
                         });
-
+                        movieContainer.append(movieDisplay);
+                        movieContainer.append(whereDiv);
                         $('#movies').append(movieContainer);
                     })
-                    
-                // movieDisplay.append(linkDisplay);
-                // movieContainer.append(movieDisplay);
                 }
         })
 
