@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -16,52 +17,39 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/roulette.css" />
     <title>Dark Horse | Search</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="main">
-      <div class="nav">
-        <a href="/index.html">Home</a><br />
-        <a href="/search.html">Search</a>
-      </div>
-      <div class="button_row">
-        <div class="button_genre">
-          <select>
-            <option value="horror">Horror</option>
-            <option value="action">Action</option>
-            <option value="comedy">Comedy</option>
-          </select>
+        <div class="nav">
+            <a href="/index.html">Home</a><br />
+            <a href="/search.html">Search</a>
         </div>
-        <div class="button_roulette">
-          <button type="button">Roulette!</button>
+        <div class="button_row">
+            <div class="button_genre">
+                <select>
+                    <option value="horror">Horror</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedy</option>
+                </select>
+            </div>
+            <div class="button_roulette">
+                <button type="button">Roulette!</button>
+            </div>
+            <hr />
         </div>
-        <hr />
-      </div>
-      <div class="display">
-        <div class="display_show_name">Movie Title</div>
-        <div class="display_show_poster">
-          <img src="http://lorempixel.com/225/350/" alt="stockphoto" />
+        <div class="display">
+            <div class="display_show_name"></div>
+            <div class="display_show_poster"></div>
+            <div class="display_show_streams">
+            </div>
+            <div class="display_show_plot">
+            </div>
+            <div class="display_show_actors">
+            </div>
         </div>
-        <div class="display_show_streams">
-          <ul>
-            <li><a href="netflix.com">netflix</a></li>
-            <li><span>|</span></li>
-            <li><a href="amazon.com">prime</a></li>
-            <li><span>|</span></li>
-            <li><a href="hulu.com">hulu</a></li>
-          </ul>
-        </div>
-        <div class="display_show_plot">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio aliquid
-          ipsam neque mollitia numquam quos modi omnis, consequuntur ipsum qui
-          vero excepturi laborum reiciendis esse adipisci? Veniam, perferendis
-          enim quam, ullam, suscipit rem ut odit repellendus reprehenderit quis
-          quasi consectetur.
-        </div>
-        <div class="display_show_actors">
-          Starring: Paul Graven, some other rad people
-        </div>
-      </div>
+        <script src="assets/javascript/roulette.js"></script>
     </div>
-  </body>
+</body>
+
 </html>
