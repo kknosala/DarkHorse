@@ -14,16 +14,29 @@
     <!-- Style Sheets -->
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/roulette.css" />
+
     <title>Dark Horse | Search</title>
   </head>
 
   <body>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">DarkHorse</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <ul class="right hide-on-med-and-down">
+                  <a class="waves-effect waves-light btn"><i class="material-icons left">account_circle</i>Subscribe</a>
+            <li><a href="/search.html">Search</a></li>
+            <li><a href="/roulette.html">Roulette</a></li>
+            <!-- Dropdown initialize -->
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Platform Dropdown<i class="material-icons center">arrow_drop_down</i></a></li>
+          </ul>
+        </div>
+      </nav>
+
     <div class="main">
-      <div class="nav">
-        <a href="/index.html">Home</a><br />
-        <a href="/search.html">Search</a>
-      </div>
       <div class="button_row">
         <div class="button_genre">
           <select>
@@ -32,6 +45,8 @@
             <option value="comedy">Comedy</option>
           </select>
         </div>
+        </div>
+        <br />
         <div class="button_roulette">
           <button type="button">Roulette!</button>
         </div>
@@ -40,7 +55,7 @@
       <div class="display">
         <div class="display_show_name">Movie Title</div>
         <div class="display_show_poster">
-          <img src="http://lorempixel.com/225/350/" alt="stockphoto" />
+          <img src="assets/images/blue-horse.jpg" alt="stockphoto" />
         </div>
         <div class="display_show_streams">
           <ul>
