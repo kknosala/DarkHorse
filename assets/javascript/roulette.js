@@ -28,6 +28,18 @@ const database = firebase.database();
 //     9: "The Devil's Rejects"
 // })
 
+// database.ref("/movies/genres/comedy").set({
+//     0: "Tucker and Dale vs Evil",
+//     1: "God Bless America",
+//     2: "What We Do in the Shadows",
+//     3: "The Voices",
+//     4: "Cooties",
+//     5: "John Dies at the End",
+//     6: "The House Bunny",
+//     7: "Sex Drive",
+//     8: "Burn After Reading"
+// })
+
 // horror roulette
 function roulette_horror() {
     database.ref("/movies/genres/horror").on("value", function (snapshot) {
@@ -58,17 +70,18 @@ function utelly(x) {
         let response_object = response.results[0]
         roulette_name = response_object.name
         $(".display_show_name").append("<span>").text(roulette_name)
-
         for (i = 0; i < response_object.locations.length; i++) {
             //* locations buttons for where to watch
             let response_locations_display_name = response_object.locations[i].display_name
             let response_locations_url = response_object.locations[i].url
             let response_locations_icon = response_object.locations[i].icon
 
-            let new_location_link = $("<a>").attr("href", response_locations_url).attr("target", "_blank")
-            let new_location_img = $("<img>").attr("src", response_locations_icon).addClass("steam-link").attr("alt", response_locations_display_name)
-            new_location_link.append(new_location_img);
-            $(".display_show_streams").append(new_location_link)
+            if (!response_locations_display_name.includes("Horror Channel")) {
+                let new_location_link = $("<a>").attr("href", response_locations_url).attr("target", "_blank")
+                let new_location_img = $("<img>").attr("src", response_locations_icon).addClass("steam-link").attr("alt", response_locations_display_name)
+                new_location_link.append(new_location_img);
+                $(".display_show_streams").append(new_location_link)
+            }
         }
     });
 }
