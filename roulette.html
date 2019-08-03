@@ -56,8 +56,26 @@
      
      <!-- Display card -->
       <div class="row">
-          <div class="col s12 m7">
+          <div class="col s6 offset-s3 valign">
             <div class="card" id="display-card">
+                  <!-- Genre Selector -->
+            <div class="input-field col s6">
+                <select>
+                  <option value="" disabled selected>Choose your Genre</option>
+                  <option value="horror">Horror</option>
+                  <option value="action">Action</option>
+                  <option value="comedy">Comedy</option>
+                </select>
+                <label>Genre Selection</label>
+              </div>
+            <!-- Roulette Button -->
+           <br>      
+            <div class="row" id="buttons">
+                <div class="col s4">
+                     <a href="roulette.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">flare</i>Roulette</a>
+                    
+                  </div>  
+                </div>
                 <div class="display_show_name"></div>
                 <div class="display_show_poster"></div>
                 <div class="display_show_streams">
@@ -68,32 +86,11 @@
                 <div class="display_show_actors">
                   STARRING
             </div>
-          </div>
-        </div>
-
-          
-    <!-- Genre Options -->
-    <div class="input-field col s12">
-        <select>
-          <option value="" disabled selected>Choose your option</option>
-          <option value="horror">Horror</option>
-          <option value="action">Action</option>
-          <option value="comedy">Comedy</option>
-        </select>
-        <label>Genre Selection</label>
-      </div>
-    <!-- Roulette Button -->
-   <br>      
-    <div class="row" id="buttons">
-        <div class="col s4">
-             <a href="roulette.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">flare</i>Roulette</a>
             
           </div>
-              
-          
         </div>
-       
 
+        
       
     <!-- ORIGINAL DISPLAY CONFIGURATION
         <div class="display">
