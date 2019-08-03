@@ -29,6 +29,7 @@ console.log("user added")
 firstName = $("#first-name").val().trim();
 lastName = $("#last-name").val().trim();
 email = $("#email-address").val().trim();
+console.log(firstName,lastName,email)
 
 
 // Code for the push
