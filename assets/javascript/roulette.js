@@ -161,4 +161,3 @@ $(document).ready(function(){
     $('select').formSelect();
   });
         
-roulette_horror();
