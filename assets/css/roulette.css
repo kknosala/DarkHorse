@@ -1,11 +1,14 @@
+.nav-wrapper {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: black;
+}
 body {
   height: 100vh;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  font-size: 20px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  /* font-size: 20px; */
 }
 /* 
 .main {
@@ -25,19 +28,17 @@ body {
 .display {
   grid-area: display;
   display: grid;
-  grid-template-rows: 10% 10% 30% 25%;
+  grid-template-rows: 20% 70% 10%;
   grid-template-columns: 5% 30% 60% 5%;
   grid-template-areas:
-    ". name . ."
-    ". poster actors ."
-    ". . plot ."
-    ". . streams .";
+    ". name streams ."
+    ". poster plot ."
+    ". . actors .";
 }
 
 .display_show_name {
   grid-area: name;
-  font-size: 50px;
-  padding-bottom: 50px;
+  font-size: 40px;
 }
 .display_show_actors {
   grid-area: actors;
@@ -51,4 +52,7 @@ body {
 
 .display_show_streams {
   grid-area: streams;
+}
+.steam-link {
+  padding: 10px;
 }
