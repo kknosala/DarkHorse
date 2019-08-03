@@ -14,14 +14,29 @@
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <!-- Search Javascrtip File -->
     <script src="assets/javascript/search.js"></script>
-    <!-- Style Sheets -->
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/roulette.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title>Dark Horse | Search</title>
 </head>
 
 <body>
+      <!-- Navbar -->
+      <nav>
+            <div class="nav-wrapper">
+              <a href="index.html" class="brand-logo">DarkHorse</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <ul class="right hide-on-med-and-down">
+                      <a href="index.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">local_movies</i>Home</a>
+                      <a href="subscribe.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">account_circle</i>Subscribe</a>
+                      <a href="search.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">filter_hdr</i>Search</a>
+            </div>
+          </nav>
     <form>
         <input type="text" id="title-input" placeholder="Title">
         <input type="text" id="actor-input" placeholder="Actor">
