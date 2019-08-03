@@ -31,11 +31,12 @@
                     <a href="index.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">account_circle</i>Home</a>
                     <a href="subscribe.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">account_circle</i>Subscribe</a>
                     <a href="search.html"a class="waves-effect waves-light btn btn black"><i class="material-icons left">filter_hdr</i>Search</a>
-  
-<hr />
       </nav>
 
-    <div class="main">
+
+
+<!-- ORIGINAL BUTTON CONFIGURATION -->
+    <!-- <div class="main">
       <div class="button_row">
         <div class="button_genre">
           <select>
@@ -50,10 +51,51 @@
           <button type="button">Roulette!</button>
         </div>
         <hr />
+      </div> -->
+
+     
+     <!-- Display card -->
+      <div class="row">
+          <div class="col s12 m7">
+            <div class="card" id="display-card">
+                <div class="display_show_name"></div>
+                <div class="display_show_poster"></div>
+                <div class="display_show_streams">
+                </div>
+                <div class="display_show_plot">
+                </div>
+                <br>
+                <div class="display_show_actors">
+                  STARRING
+            </div>
+          </div>
+        </div>
+
+          
+    <!-- Genre Options -->
+    <div class="input-field col s12">
+        <select>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="horror">Horror</option>
+          <option value="action">Action</option>
+          <option value="comedy">Comedy</option>
+        </select>
+        <label>Genre Selection</label>
       </div>
+    <!-- Roulette Button -->
+   <br>      
+    <div class="row" id="buttons">
+        <div class="col s4">
+             <a href="roulette.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">flare</i>Roulette</a>
+            
+          </div>
+              
+          
+        </div>
+       
 
       
-        
+    <!-- ORIGINAL DISPLAY CONFIGURATION
         <div class="display">
             <div class="display_show_name"></div>
             <div class="display_show_poster"></div>
@@ -64,8 +106,13 @@
             <div class="display_show_actors">
             </div>
         </div>
-        <script src="assets/javascript/roulette.js"></script>
-    </div>
+        
+    </div> -->
+   
+
+   <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>        
+    <script src="assets/javascript/roulette.js"></script>
 </body>
 
 </html>

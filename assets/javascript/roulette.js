@@ -101,3 +101,9 @@ function print() {
     console.log(`actors: ${roulette_actors}`)
 }
 roulette_horror();
+
+// selection function
+$(document).ready(function(){
+    $('select').formSelect();
+  });
+        
