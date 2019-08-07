@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/roulette.css" />
+  <!-- <link rel="stylesheet" href="assets/css/roulette.css" /> -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title>Dark Horse | Search</title>
@@ -28,7 +28,7 @@
       <!-- Navbar -->
       <nav>
             <div class="nav-wrapper">
-              <a href="index.html class="brand-logo">DarkHorse</a>
+              <div class="brand-logo">DarkHorse</div>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                   <ul class="right hide-on-med-and-down">
                       <a href="index.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">local_movies</i>Home</a>
@@ -39,8 +39,7 @@
             </div>
           </nav>
     <form>
-        <input type="text" id="title-input" placeholder="Title">
-        <input type="text" id="actor-input" placeholder="Actor">
+        <input type="text" id="title-input" placeholder="Title" required>
         <input type="text" id="year-input" placeholder="2019">
         <select name="genre" id="search-type">
                 <option value="" disabled selected>Select a Type</option>
@@ -51,7 +50,9 @@
         <input type="submit" value="Search" id="submit-search">
     </form>
     <div id="movies">
-
+      <div class="movie-display">
+<div class="where-to-watch"></div>
+</div>
     </div>
 </body>
 

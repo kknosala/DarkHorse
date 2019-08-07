@@ -9,9 +9,11 @@ $(document).ready(function() {
     var search = $("#title-input")
       .val()
       .trim();
+    $("#title-input").val("");
     var year = $("#year-input")
       .val()
       .trim();
+    $("#year-input").val("");
     // URL used in ajax call
     var queryURL =
       "https://www.omdbapi.com/?apikey=trilogy&s=" + search + "&y=" + year;
