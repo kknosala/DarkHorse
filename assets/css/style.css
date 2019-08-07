@@ -1,34 +1,50 @@
 .nav-wrapper {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   background-color: black;
-}
-.movie-container {
+  }
+  .movie-container {
   border-bottom: 2px dashed black;
   padding: 15px;
-}
-.movie-display {
+  }
+  .movie-display {
   display: grid;
-  grid-template-rows: 0% auto auto;
+  grid-auto-rows: 0% min-content min-content;
   grid-template-columns: 10% auto1fr auto1fr 10%;
   grid-gap: 2em;
-  grid-template-areas:
-    ". movie-poster . ."
-    ". . movie-info ."
-    ". . plot-info .";
-}
-.movie-poster {
+  /* grid-template-areas:
+  ". movie-poster . ."
+  ". . movie-info ."
+  ". . plot-info ."; */
+  }
+  .movie-poster {
   grid-area: movie-poster;
-}
-.movie-info {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  /* grid-auto-rows: min-content; */
+  }
+  .movie-info {
   grid-area: movie-info;
-}
-.plot-info {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-auto-rows: min-content;
+  }
+  .plot-info {
   grid-area: plot-info;
-}
-
-.where-to-watch {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-auto-rows: min-content;
+  padding-bottom: 50px;
+  }
+  .where-to-watch {
   text-align: center;
-}
-.container {
+  }
+  .container {
   float: center;
-}
+  }
+  
