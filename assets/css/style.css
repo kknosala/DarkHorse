@@ -1,11 +1,34 @@
-.nav-wrapper { 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
-    background-color: black; 
+.nav-wrapper {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: black;
+}
+.movie-container {
+  border-bottom: 2px dashed black;
+  padding: 15px;
+}
+.movie-display {
+  display: grid;
+  grid-template-rows: 0% auto auto;
+  grid-template-columns: 10% auto1fr auto1fr 10%;
+  grid-gap: 2em;
+  grid-template-areas:
+    ". movie-poster . ."
+    ". . movie-info ."
+    ". . plot-info .";
+}
+.movie-poster {
+  grid-area: movie-poster;
+}
+.movie-info {
+  grid-area: movie-info;
+}
+.plot-info {
+  grid-area: plot-info;
 }
 
+.where-to-watch {
+  text-align: center;
+}
 .container {
-   float: center;
-
+  float: center;
 }
-
-
