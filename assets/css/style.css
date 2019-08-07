@@ -8,12 +8,12 @@
 }
 .movie-display {
   display: grid;
-  grid-template-rows: 20% auto;
+  grid-template-rows: 0% auto auto;
   grid-template-columns: 10% auto1fr auto1fr 10%;
   grid-gap: 2em;
   grid-template-areas:
-      /* ". . where-to-watch ." */
-    ". movie-poster movie-info ."
+    ". movie-poster . ."
+    ". . movie-info ."
     ". . plot-info .";
 }
 .movie-poster {
@@ -25,11 +25,9 @@
 .plot-info {
   grid-area: plot-info;
 }
+
 .where-to-watch {
-  grid-area: where-to-watch;
-}
-.container {
-  float: center;
+  text-align: center;
 }
 .container {
   float: center;
