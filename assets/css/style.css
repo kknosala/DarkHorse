@@ -3,6 +3,7 @@
   background-color: black;
 }
 
+<<<<<<< HEAD
 .movie-container {
   border-bottom: 2px dashed black;
   padding: 15px;
@@ -29,3 +30,15 @@
 .where-to-watch {
   grid-area: where-to-watch;
 }
+.container {
+    float: center;
+ 
+ }
+=======
+.container {
+   float: center;
+
+}
+
+
+>>>>>>> 4d080d835a07e38abccc9d6b803429b00c90f20a
