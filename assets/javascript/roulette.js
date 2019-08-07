@@ -110,6 +110,8 @@ function utelly(x) {
         // console.log(response.results[0]);
         let response_object = response.results[0]
         roulette_name = response_object.name
+        $(".display_show_name").empty();
+        $(".display_show_streams").empty();
         $(".display_show_name").append("<span>").text(roulette_name)
         for (i = 0; i < response_object.locations.length; i++) {
             //* locations buttons for where to watch
@@ -134,30 +136,37 @@ function omdb(x) {
     }).then(function (response) {
         console.log(response)
         //* PLOT
+        $(".display_show_plot").empty();
         $(".display_show_plot").append(response.Plot)
         //* POSTER
+        $(".display_show_poster").empty();
         $(".display_show_poster").append($("<img>").attr("src", response.Poster))
         //* YEAR
         roulette_year = response.Year
         roulette_rated = response.Rated
         roulette_actors = response.Actors
+        $(".display_show_actors").empty();
         $(".display_show_actors").append($("<p>").text(response.Actors))
     });
 }
 
 
-function print() {
-    console.log(`year: ${roulette_year}`)
-    console.log(`rated: ${roulette_rated}`)
-    console.log(`poster img: ${roulette_poster}`)
-    console.log(`plot: ${roulette_plot}`)
-    console.log(`location obj: ${response_locations}`)
-    console.log(`actors: ${roulette_actors}`)
-}
-roulette_horror();
-
 // selection function
-$(document).ready(function(){
+$(document).ready(function () {
     $('select').formSelect();
-  });
-        
+
+    $("#search_roulette").click(function () {
+        term = $("#selector_genre option:selected").val()
+        console.log(term)
+
+        if (term === "horror") {
+            roulette_horror();
+        } else if (term === "action") {
+            roulette_action();
+        } else if (term === "comedy") {
+            roulette_comedy();
+        }
+
+    })
+
+});
