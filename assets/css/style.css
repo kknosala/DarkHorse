@@ -8,7 +8,7 @@
 }
 .movie-display {
   display: grid;
-  grid-template-rows: 0% auto auto;
+  grid-auto-rows: 0% min-content min-content;
   grid-template-columns: 10% auto1fr auto1fr 10%;
   grid-gap: 2em;
   grid-template-areas:
