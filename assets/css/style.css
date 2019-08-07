@@ -8,8 +8,8 @@
 }
 .movie-display {
   display: grid;
-  grid-template-rows: 20% 1fr;
-  grid-template-columns: 10% 1fr 1fr 10%;
+  grid-template-rows: 20% auto;
+  grid-template-columns: 10% auto1fr auto1fr 10%;
   grid-gap: 2em;
   grid-template-areas:
       /* ". . where-to-watch ." */
