@@ -2,6 +2,7 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   background-color: black;
 }
+
 body {
   height: 100vh;
   background-repeat: no-repeat;
@@ -10,6 +11,7 @@ body {
   background-attachment: fixed;
   /* font-size: 20px; */
 }
+
 /* 
 .main {
   display: grid;
@@ -25,7 +27,7 @@ body {
   grid-area: buttons;
 } */
 
-.display {
+/* .display {
   grid-area: display;
   display: grid;
   grid-template-rows: 20% 70% 10%;
@@ -55,8 +57,73 @@ body {
 }
 .steam-link {
   padding: 10px;
-}
+} */
 
 #display-card {
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.display_show {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: 30px 20px 2fr;
+  grid-template-areas:
+    "display_show_name"
+    "display_show_streams"
+    "second_row_display";
+}
+
+.display_show_name {
+  grid-area: display_show_name;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second_row_display {
+  grid-area: second_row_display;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "display_show_poster second_column_display";
+}
+
+.display_show_poster {
+  grid-area: display_show_poster;
+  padding: 10px;
+}
+
+.second_column_display {
+  grid-area: second_column_display;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "display_show_plot"
+    "display_show_actors";
+}
+
+.display_show_plot {
+  grid-area: display_show_plot;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display_show_actors {
+  grid-area: display_show_actors;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display_show_streams {
+  grid-area: display_show_streams;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }

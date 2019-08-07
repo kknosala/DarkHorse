@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
-    <!-- Firebase Database SDK-->
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+  <!-- Firebase Database SDK-->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
   <!-- Style Sheets -->
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -19,28 +19,31 @@
   <link rel="stylesheet" href="assets/css/roulette.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>Dark Horse | Roulette</title>
+  <title>Dark Horse | Roulette</title>
 </head>
 
-  <body>
+<body>
   <!-- Navbar -->
   <nav>
     <div class="nav-wrapper">
-      <a href="index.html class="brand-logo">DarkHorse</a>
+      <a href="index.html class=" brand-logo">DarkHorse</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <ul class="right hide-on-med-and-down">
-              <a href="index.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">local_movies</i>Home</a>
-              <a href="subscribe.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">account_circle</i>Subscribe</a>
-              <a href="search.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">filter_hdr</i>Search</a>
-              
-       
+        <ul class="right hide-on-med-and-down">
+          <a href="index.html" class="waves-effect waves-light btn btn black"><i
+              class="material-icons left">local_movies</i>Home</a>
+          <a href="subscribe.html" class="waves-effect waves-light btn btn black"><i
+              class="material-icons left">account_circle</i>Subscribe</a>
+          <a href="search.html" class="waves-effect waves-light btn btn black"><i
+              class="material-icons left">filter_hdr</i>Search</a>
+
+
     </div>
   </nav>
 
 
 
-<!-- ORIGINAL BUTTON CONFIGURATION -->
-    <!-- <div class="main">
+  <!-- ORIGINAL BUTTON CONFIGURATION -->
+  <!-- <div class="main">
       <div class="button_row">
         <div class="button_genre">
           <select>
@@ -57,45 +60,61 @@
         <hr />
       </div> -->
 
-     
-     <!-- Display card -->
-      <div class="row">
-          <div class="col s6 offset-s3 valign">
-            <div class="card" id="display-card">
-                  <!-- Genre Selector -->
-            <div class="input-field col s6">
-                <select>
-                  <option value="" disabled selected>Choose your Genre</option>
-                  <option value="horror">Horror</option>
-                  <option value="action">Action</option>
-                  <option value="comedy">Comedy</option>
-                </select>
-                <label>Genre Selection</label>
-              </div>
-            <!-- Roulette Button -->
-           <br>      
-            <div class="row" id="buttons">
-                <div class="col s4">
-                     <a href="roulette.html" class="waves-effect waves-light btn btn black"><i class="material-icons left">flare</i>Roulette</a>
-                    
-                  </div>  
-                </div>
-                <div class="display_show_name"></div>
-                <div class="display_show_poster"></div>
-                <div class="display_show_streams">
-                </div>
-                <div class="display_show_plot">
-                </div>
-                <br>
-                <div class="display_show_actors">
-                  STARRING
-            </div>
-            
+
+  <!-- Display card -->
+  <div class="row">
+    <div class="col s8 offset-s2 valign">
+      <div class="card" id="display-card">
+        <!-- Genre Selector -->
+
+        <div class="search_bar">
+
+          <div class="input-field col s6 offset-s2" id="selector_genre">
+            <select>
+              <option value="" disabled selected>Choose your Genre</option>
+              <option value="horror">Horror</option>
+              <option value="action">Action</option>
+              <option value="comedy">Comedy</option>
+            </select>
+            <label>Genre Selection</label>
           </div>
+          <div class="row" id="buttons">
+            <div class="col s4">
+              <a class="waves-effect waves-light btn btn black  btn-large" id="search_roulette"><i
+                  class="material-icons left">flare</i>Roulette</a>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- Roulette Button -->
+        <br>
+
+        <div class="display_show">
+
+          <div class="display_show_name"></div>
+          <div class="second_row_display">
+            <div class="display_show_poster"></div>
+            <div class="second_column_display">
+
+              <div class="display_show_plot">
+              </div>
+
+              <div class="display_show_actors">
+              </div>
+            </div>
+          </div>
+          <div class="display_show_streams">
+          </div>
+
         </div>
 
-        
-      
+
+      </div>
+    </div>
+
+
+
     <!-- ORIGINAL DISPLAY CONFIGURATION
         <div class="display">
             <div class="display_show_name"></div>
@@ -109,10 +128,10 @@
         </div>
         
     </div> -->
-   
 
-   <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>        
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/javascript/roulette.js"></script>
 </body>
 
