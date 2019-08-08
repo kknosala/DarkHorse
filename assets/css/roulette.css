@@ -67,11 +67,17 @@ body {
 .display_show {
   display: grid;
   grid-gap: 20px;
-  grid-template-rows: 30px 20px 2fr;
+  grid-template-rows: 30px 20px 2fr auto auto;
   grid-template-areas:
     "display_show_name"
     "display_show_streams"
-    "second_row_display";
+    "second_row_display"
+    "display_reviews"
+    "sumbit_review";
+}
+
+.sumbit_review {
+  grid-area: sumbit_review;
 }
 
 .display_show_name {
@@ -90,6 +96,36 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "display_show_poster second_column_display";
+}
+
+.display_reviews {
+  grid-area: display_reviews;
+  display: flex;
+  justify-content: center;
+  justify-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.review {
+  padding: 5px;
+  margin: 5px;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  letter-spacing: 1.5px;
+  width: 80%;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border: 0px solid #000000;
+  -webkit-box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.75);
+}
+
+.stars {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .display_show_poster {
