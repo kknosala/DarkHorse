@@ -1,50 +1,57 @@
 .nav-wrapper {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   background-color: black;
-  }
-  .movie-container {
+}
+.movie-container {
   border-bottom: 2px dashed black;
   padding: 15px;
-  }
-  .movie-display {
+}
+.movie-display {
   display: grid;
-  grid-auto-rows: 0% min-content min-content;
-  grid-template-columns: 10% auto1fr auto1fr 10%;
+  grid-auto-rows: min-content min-content min-content;
+  grid-auto-columns: 300px auto;
   grid-gap: 2em;
   /* grid-template-areas:
   ". movie-poster . ."
   ". . movie-info ."
   ". . plot-info ."; */
-  }
-  .movie-poster {
+}
+.movie-display img {
+  width: 300px;
+  border: solid;
+}
+
+.movie-poster {
   grid-area: movie-poster;
-  grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 4;
   /* grid-auto-rows: min-content; */
-  }
-  .movie-info {
+}
+.movie-info {
   grid-area: movie-info;
-  grid-column-start: 3;
-  grid-column-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
   grid-auto-rows: min-content;
-  }
-  .plot-info {
+}
+.plot-info {
   grid-area: plot-info;
-  grid-column-start: 3;
-  grid-column-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
   grid-auto-rows: min-content;
   padding-bottom: 50px;
-  }
-  .where-to-watch {
+}
+.where-to-watch {
   text-align: center;
-  }
-  .container {
+}
+.where-to-watch a {
+  padding: 20px;
+}
+.container {
   float: center;
-  }
-  
+}
