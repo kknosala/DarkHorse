@@ -159,6 +159,7 @@ function roulette_comedy() {
         //runs utelly search for locations and name
         utelly(snapshot.val()[roulette_choice])
         omdb(snapshot.val()[roulette_choice])
+        reviews_comedy(snapshot.val()[roulette_choice])
     })
 }
 
@@ -170,6 +171,8 @@ function roulette_action() {
 
         //runs ajax call to look up the movie
         //runs utelly search for locations and name
+        $(".sumbit_review").empty();
+        $(".display_reviews").empty();
         utelly(snapshot.val()[roulette_choice])
         omdb(snapshot.val()[roulette_choice])
     })
@@ -281,6 +284,59 @@ function reviews_horror(x) {
 
 };
 
+function reviews_comedy(x) {
+    database.ref(`/reviews/genres/comedy/${x}`).on("value", function (snapshot) {
+        last_genre = '/reviews/genres/comedy/'
+        child_name = snapshot.numChildren()
+        // displays reviews
+        $(".display_reviews").empty();
+        for (i = 0; i < snapshot.numChildren(); i++) {
+            let stars = snapshot.val()[i][0];
+            let comment = snapshot.val()[i][1];
+            let newDiv = $("<div>").addClass("review")
+            let starDiv = $("<div>").addClass("stars").attr("id", `${stars}stars`).text(`${stars} / 5`)
+            let commentDiv = $("<div>").addClass("comment").text(comment)
+            newDiv.append(starDiv, commentDiv)
+            $(".display_reviews").append(newDiv);
+
+        }
+
+        // * review input
+        $(".sumbit_review").empty();
+        var newForm = $("<form class='col s12' onSubmit='reviewsub()'>")
+        var rowDiv = $("<div class='row'>")
+
+        var starInput = $("<div class='input-field col s2' id='selector_stars'>")
+        var starSelector = $("<select>")
+        for (i = 1; i < 6; i++) {
+            starSelector.append($(`<option value=${i}>`).text(i))
+        }
+        var starLabel = $("<label>").text("stars")
+        starInput.append(starSelector, starLabel)
+
+        var commentInput = $("<div class='input-field col s8'>")
+        var comment_input = $("<input type='text' class='comment_input'>").attr('id', x)
+        var comment_label = $(`<label for=${x}>`).text("comment")
+        commentInput.append(comment_input, comment_label)
+
+
+        //        <button class="btn btn-large btn-register waves-effect waves-light" type="submit" name="action">Register
+        // <i class="material-icons right">done</i>
+        //    </button>
+        var review_button_div = $("<div class='col s1'>")
+        var review_button = $("<button class='waves-effect waves-light btn btn black  btn-large' type='submit' name='action'>").attr("id", "review_button")
+        var review_b = $("<i class='material-icons left'>").text("add_circle_outline")
+        review_button.append(review_b)
+        review_button_div.append(review_button)
+
+        rowDiv.append(starInput, commentInput, review_button_div)
+        newForm.append(rowDiv)
+        $(".sumbit_review").append(newForm)
+        $('select').formSelect();
+    })
+
+};
+
 function reviewsub() {
     event.preventDefault();
     let rating = $("#selector_stars option:selected").val();
@@ -296,7 +352,6 @@ function reviewsub() {
 
 }
 
-roulette_horror();
 // selection function
 $(document).ready(function () {
     $('select').formSelect();
